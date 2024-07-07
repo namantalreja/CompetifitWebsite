@@ -61,7 +61,7 @@ const NewsletterForm = ( { status, message, onValidated }) => {
 
   return (
     <div>
-      <h3 className="mb-1 font-bold pt-20">Sign Up To Our Waitlist Below</h3>
+      <h3 className="mb-1 font pt-20">Sign Up To Our Waitlist Below</h3>
       <div className="flex newsletter-input-fields pt-2">
         <div className="mc-field-group text-white">
           <input
