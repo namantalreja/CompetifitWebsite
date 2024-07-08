@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+
 const NewsletterForm = ( { status, message, onValidated }) => {
 
   const [ error, setError ] = useState(null);
@@ -60,8 +61,8 @@ const NewsletterForm = ( { status, message, onValidated }) => {
   }
 
   return (
-    <div>
-      <h3 className="mb-1 font pt-20">Sign Up To Our Waitlist Below</h3>
+    <div className='flex flex-col pb-20'>
+      <h3 className="mb-1 font text-white pt-10 w-9/10">Sign Up To Our Waitlist Below</h3>
       <div className="flex newsletter-input-fields pt-2">
         <div className="mc-field-group text-white">
           <input
@@ -73,8 +74,7 @@ const NewsletterForm = ( { status, message, onValidated }) => {
           />
         </div>
         <div className="button-wrap pl-2">
-      <button className="cursor-pointer text-white bg-black-500 border-white border py-2 px-4 md:px-5 focus:outline-none hover:border-gray-300 rounded-lg"
-      onClick={handleFormSubmit}>
+      <button class="nes-btn is-Primary" onClick={handleFormSubmit}>
        Submit
       </button>
       </div>
@@ -90,7 +90,7 @@ const NewsletterForm = ( { status, message, onValidated }) => {
           />
         ) : null }
         {'success' === status && 'error' !== status && !error && (
-          <div className="text-white-200 font-bold pt-2" dangerouslySetInnerHTML={{ __html: message }} />
+          <div className="text-white pt-2" dangerouslySetInnerHTML={{ __html: message }} />
         )}
       </div>
     </div>
