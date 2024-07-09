@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+
 const NewsletterForm = ( { status, message, onValidated }) => {
 
   const [ error, setError ] = useState(null);
@@ -60,23 +61,26 @@ const NewsletterForm = ( { status, message, onValidated }) => {
   }
 
   return (
-    <div>
-      <h3 className="mb-1 font pt-20">Sign Up To Our Waitlist Below</h3>
-      <div className="flex newsletter-input-fields pt-2">
+    <div className='flex flex-col flex-wrap pb-20'>
+      <div className="text-wrap">
+      <h3 className="mb-1 text-wrap text-white pt-10 w-full lg:w-9/10 text-center p-1">Sign Up To Our Waitlist Below!</h3>
+      </div>
+      
+
+      <div className="flex flex-col m:flex-row newsletter-input-fields pt-2 px-0.5">
         <div className="mc-field-group text-white">
           <input
             onChange={(event) => setEmail(event?.target?.value ?? '')}
             type="email"
             placeholder="Your Email"
-            className="required email text-black rounded-l rounded-r border border-gray-400 h-full pl-3"
+            className="required email text-black rounded-l rounded-r border border-gray-400 h-full pl-3 p-1 mx-0.5"
             onKeyUp={(event) => handleInputKeyEvent(event)}
           />
         </div>
         <div className="button-wrap pl-2">
-      <button className="cursor-pointer text-white bg-black-500 border-white border py-2 px-4 md:px-5 focus:outline-none hover:border-gray-300 rounded-lg"
-      onClick={handleFormSubmit}>
-       Submit
-      </button>
+        <button class="nes-btn is-Primary" onClick={handleFormSubmit}>
+        Submit
+        </button>
       </div>
 
 
@@ -90,7 +94,7 @@ const NewsletterForm = ( { status, message, onValidated }) => {
           />
         ) : null }
         {'success' === status && 'error' !== status && !error && (
-          <div className="text-white-200 font-bold pt-2" dangerouslySetInnerHTML={{ __html: message }} />
+          <div className="text-white pt-2" dangerouslySetInnerHTML={{ __html: message }} />
         )}
       </div>
     </div>
